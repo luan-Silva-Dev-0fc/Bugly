@@ -1,0 +1,17 @@
+{
+  "name": "Bugly PRO AI",
+  "short_name": "Bugly",
+  "description": "Premium AI Debugger para desenvolvedores",
+  "start_url": "home.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#38bdf8",
+  "icons": [
+    {
+      "src": " https://cdn-icons-png.flaticon.com/512/4726/4726005.png ",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
