@@ -1,62 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bugly | Premium AI Debugger</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn-icons-png.flaticon.com/512/2103/2103830.png"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="particles-js"></div>
 
     <nav class="navbar">
-        <div class="logo">Bugly<span>.</span></div>
-      
+      <div class="logo">Bugly<span>.</span></div>
     </nav>
 
     <section class="section hero">
-        <div class="hero-content" data-aos="fade-up">
-            <span class="badge">Next-Gen Debugging</span>
-            <h1>Sua produtividade <span class="gradient-text">Sem Limites.</span></h1>
-            <p>Traduza logs complexos, identifique a <strong>linha exata</strong> e resolva bugs em segundos.</p>
-            <button class="btn-premium" onclick="window.location.href='home.html'">Iniciar Experiência</button>
-        </div>
+      <div class="hero-content" data-aos="fade-up">
+        <span class="badge">Next-Gen Debugging</span>
+        <h1>
+          Sua produtividade <span class="gradient-text">Sem Limites.</span>
+        </h1>
+        <p>
+          Traduza logs complexos, identifique a <strong>linha exata</strong> e
+          resolva bugs em segundos.
+        </p>
+        <button
+          class="btn-premium"
+          onclick="window.location.href = 'home.html'"
+        >
+          Iniciar Experiência
+        </button>
+      </div>
     </section>
 
     <section class="section">
-        <div class="container-grid">
-            <div class="text-block" data-aos="fade-right">
-                <h2>Scanner de <br><span>Linha & Pasta</span></h2>
-                <p>Nossa IA não apenas traduz; ela rastreia o caminho do arquivo (`/src/components/user...`) e aponta o dedo para o erro.</p>
-                <div class="mini-card">
-                    <strong>Erro detectado:</strong> Linha 42 - SyntaxError
-                </div>
-            </div>
-            <div class="image-block" data-aos="zoom-in-up">
-                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80" alt="Code Mapping" class="premium-img">
-            </div>
+      <div class="container-grid">
+        <div class="text-block" data-aos="fade-right">
+          <h2>Scanner de <br /><span>Linha & Pasta</span></h2>
+          <p>
+            Nossa IA não apenas traduz; ela rastreia o caminho do arquivo
+            (`/src/components/user...`) e aponta o dedo para o erro.
+          </p>
+          <div class="mini-card">
+            <strong>Erro detectado:</strong> Linha 42 - SyntaxError
+          </div>
         </div>
+        <div class="image-block" data-aos="zoom-in-up">
+          <img
+            src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80"
+            alt="Code Mapping"
+            class="premium-img"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="section">
-        <div class="container-grid reverse">
-            <div class="text-block" data-aos="fade-left">
-                <h2>Tradução <br><span>Global</span></h2>
-                <p>Inglês, Russo, Chinês ou Stack Traces ilegíveis. O Bugly converte tudo para uma linguagem humana e clara.</p>
-            </div>
-            <div class="image-block" data-aos="flip-left">
-                <img src="https://www.remessaonline.com.br/blog/wp-content/uploads/2024/04/logica-de-programacao.jpg" alt="AI Logic" class="premium-img">
-            </div>
+      <div class="container-grid reverse">
+        <div class="text-block" data-aos="fade-left">
+          <h2>Tradução <br /><span>Global</span></h2>
+          <p>
+            Inglês, Russo, Chinês ou Stack Traces ilegíveis. O Bugly converte
+            tudo para uma linguagem humana e clara.
+          </p>
         </div>
+        <div class="image-block" data-aos="flip-left">
+          <img
+            src="https://www.remessaonline.com.br/blog/wp-content/uploads/2024/04/logica-de-programacao.jpg"
+            alt="AI Logic"
+            class="premium-img"
+          />
+        </div>
+      </div>
     </section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="index.js"></script>
+
     <script>
-        AOS.init({ duration: 1000, once: false });
+      AOS.init({ duration: 1000, once: false });
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then((reg) => console.log("Bugly PWA: Ativo e pronto!", reg.scope))
+            .catch((err) => console.log("Erro ao registrar PWA:", err));
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
