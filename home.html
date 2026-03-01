@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugly | Dashboard Premium AI</title>
+    <link rel="stylesheet" href="error.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="app-container">
+        <nav>
+            <div class="logo">Bugly<span>.</span></div>
+            <div class="status-indicator">
+                <span class="dot"></span> Groq Engine Ready
+            </div>
+        </nav>
+
+        <header>
+            <h1>Análise de Depuração</h1>
+            <p>Identificação de diretórios, linhas de execução e dependências faltantes.</p>
+        </header>
+
+        <div class="glass-card main-input">
+            <textarea id="errorInput" placeholder="Cole aqui o log do terminal ou o erro do console (ex: Error: Cannot find module 'axios' at line 42...)"></textarea>
+            
+            <div class="input-actions">
+                <button id="btnAnalyze" class="btn-analyze">
+                    <span id="btnText">Executar Diagnóstico</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </div>
+        </div>
+
+        <div id="resultArea" class="glass-card result-box">
+            <div id="aiOutput" class="result-content">
+                </div>
+            
+            <div class="quick-actions">
+                <button onclick="copySolution()" class="btn-secondary">Copiar Resolução</button>
+                <button onclick="clearAll()" class="btn-ghost">Limpar Console</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="error.js"></script>
+
+    <script>
+        // Funções de utilidade rápida para os novos botões
+        function copySolution() {
+            const content = document.getElementById('aiOutput').innerText;
+            navigator.clipboard.writeText(content);
+            alert("Resolução copiada para a área de transferência!");
+        }
+
+        function clearAll() {
+            document.getElementById('errorInput').value = '';
+            document.getElementById('resultArea').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

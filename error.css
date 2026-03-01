@@ -1,0 +1,344 @@
+:root {
+  --black: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #121212;
+
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --accent-glow: rgba(56, 189, 248, 0.35);
+
+  --error: #ef4444;
+  --error-glow: rgba(239, 68, 68, 0.4);
+
+  --success: #10b981;
+  --success-glow: rgba(16, 185, 129, 0.4);
+
+  --glass: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f172a 0%, #000 60%);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #000;
+}
+
+.app-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 25px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.logo span {
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.status-indicator {
+  font-size: 0.75rem;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--success-glow);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+}
+
+header p {
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+
+.glass-card {
+  background: linear-gradient(145deg, var(--glass), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
+  transition: 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--accent);
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  color: #fff;
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  transition: 0.3s ease;
+}
+
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.btn-analyze {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-analyze:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px var(--accent-glow);
+}
+
+.btn-analyze:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result-box {
+  margin-top: 40px;
+  display: none;
+  border: 1px solid var(--accent);
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(56, 189, 248, 0.05),
+    rgba(0, 0, 0, 0.8)
+  );
+  animation: slideIn 0.4s ease forwards;
+}
+
+.result-content {
+  padding: 25px;
+  line-height: 1.7;
+}
+
+.file-map {
+  margin-top: 25px;
+  padding: 20px;
+  background: var(--surface);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.file-map ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.file-map li {
+  margin: 6px 0;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: 0.2s ease;
+}
+
+.file-map li:hover {
+  color: var(--accent);
+}
+
+.folder-error {
+  color: var(--error);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--error-glow);
+}
+
+.file-error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.line-error {
+  background: rgba(239, 68, 68, 0.15);
+  border-left: 4px solid var(--error);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.dependency-check {
+  margin-top: 25px;
+  padding: 18px;
+  border-radius: 15px;
+  background: rgba(16, 185, 129, 0.07);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dependency-check code {
+  display: block;
+  margin-top: 10px;
+  padding: 12px;
+  background: #000;
+  border-radius: 8px;
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #000;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+  display: none;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  .app-container {
+    padding: 30px 15px;
+  }
+  .glass-card {
+    padding: 25px;
+  }
+}
+
+.quick-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* Base de botão */
+.quick-actions button {
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+/* Botão Secundário (ação principal auxiliar) */
+.btn-secondary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #000;
+    border: 1px solid var(--accent);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px var(--accent-glow);
+}
+
+/* Botão Ghost (ação leve) */
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+    color: var(--text-main);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+/* Estado ativo (clique) */
+.quick-actions button:active {
+    transform: scale(0.96);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .quick-actions {
+        flex-direction: column;
+    }
+
+    .quick-actions button {
+        width: 100%;
+    }
+}
