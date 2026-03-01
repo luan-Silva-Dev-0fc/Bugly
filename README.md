@@ -1,4 +1,7 @@
 # 🧠 Bugly PRO
+<p align="center">
+  <img src="" width="100%" />
+</p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="60" />
