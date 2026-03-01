@@ -1,16 +1,16 @@
 # 🧠 Bugly PRO
 
-```{=html}
 <p align="center">
-```
-`<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="60" />`{=html}
-`<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="60" />`{=html}
-`<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" />`{=html}
-```{=html}
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width="60" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width="60" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" />
 </p>
-```
 
-------------------------------------------------------------------------
+<p align="center">
+<img src="https://img.shields.io/badge/Versão-3.0_PRO-38bdf8?style=for-the-badge" />
+<img src="https://img.shields.io/badge/IA_Engine-Groq_Llama_3-white?style=for-the-badge" />
+<img src="https://img.shields.io/badge/Status-Online-10b981?style=for-the-badge" />
+</p>
 
 ## 🚀 AI Terminal Error Analyzer
 
