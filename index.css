@@ -6,39 +6,115 @@
     --glass: rgba(255, 255, 255, 0.03);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
 
-body { background: var(--black); color: var(--white); overflow-x: hidden; }
+body {
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
 
-#particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
 
-.navbar { position: fixed; top: 0; width: 100%; padding: 25px 8%; display: flex; justify-content: space-between; z-index: 100; backdrop-filter: blur(15px); }
-.logo { font-size: 1.8rem; font-weight: 900; }
-.logo span { color: var(--accent); }
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+}
 
-.section { position: relative; z-index: 2; min-height: 100vh; display: flex; align-items: center; padding: 0 10%; margin-bottom: 50px; }
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
 
-.container-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; width: 100%; }
-.container-grid.reverse { direction: rtl; }
-.container-grid.reverse .text-block { direction: ltr; }
+.logo span {
+    color: var(--accent);
+}
 
-h1 { font-size: 5rem; font-weight: 900; line-height: 1; letter-spacing: -3px; margin-bottom: 20px; }
-h2 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-h2 span { color: var(--accent); }
+.section {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
 
-.gradient-text { color: var(--accent); text-shadow: 0 0 50px rgba(56, 189, 248, 0.4); }
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+}
 
-p { font-size: 1.2rem; color: var(--gray); line-height: 1.6; margin-bottom: 30px; }
+.container-grid.reverse {
+    direction: rtl;
+}
+
+.container-grid.reverse .text-block {
+    direction: ltr;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 span {
+    color: var(--accent);
+}
+
+.gradient-text {
+    color: var(--accent);
+    text-shadow: 0 0 50px rgba(56, 189, 248, 0.4);
+}
+
+p {
+    font-size: 1.2rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
 
 .premium-img {
     width: 100%;
     border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.premium-img:hover { transform: scale(1.02) rotate(1deg); border-color: var(--accent); }
+.premium-img:hover {
+    transform: scale(1.02) rotate(1deg);
+    border-color: var(--accent);
+}
 
 .btn-premium {
     padding: 20px 45px;
@@ -50,10 +126,14 @@ p { font-size: 1.2rem; color: var(--gray); line-height: 1.6; margin-bottom: 30px
     font-size: 1.1rem;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
-.btn-premium:hover { background: var(--accent); color: var(--white); transform: translateY(-5px); }
+.btn-premium:hover {
+    background: var(--accent);
+    color: var(--white);
+    transform: translateY(-5px);
+}
 
 .mini-card {
     background: var(--glass);
@@ -64,10 +144,22 @@ p { font-size: 1.2rem; color: var(--gray); line-height: 1.6; margin-bottom: 30px
     color: var(--accent);
 }
 
-/* Responsividade */
+
 @media (max-width: 900px) {
-    .container-grid { grid-template-columns: 1fr; text-align: center; }
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.5rem; }
-    .section { padding: 80px 5%; }
+    .container-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
 }
