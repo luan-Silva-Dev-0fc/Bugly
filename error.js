@@ -26,7 +26,7 @@ particlesJS("particles-js", {
   retina_detect: true,
 });
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const btn = document.getElementById("btnAnalyze");
 const loader = document.getElementById("loader");
@@ -171,4 +171,5 @@ btn.addEventListener("click", async () => {
     loader.style.display = "none";
     btnText.innerText = "Analisar com Bugly AI";
   }
+
 });
