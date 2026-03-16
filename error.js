@@ -26,7 +26,7 @@ particlesJS("particles-js", {
   retina_detect: true,
 });
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const btn = document.getElementById("btnAnalyze");
 const loader = document.getElementById("loader");
